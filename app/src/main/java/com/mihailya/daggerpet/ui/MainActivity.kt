@@ -1,12 +1,9 @@
 package com.mihailya.daggerpet.ui
 
 import android.os.Bundle
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.viewmodel.initializer
-import androidx.lifecycle.viewmodel.viewModelFactory
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.mihailya.daggerpet.R.layout
 import com.mihailya.daggerpet.databinding.ActivityMainBinding
@@ -36,14 +33,6 @@ class MainActivity : AppCompatActivity() {
   lateinit var plainViewModelFactory: Provider<MainPlainViewModel>
 
   private val plainViewModel: MainPlainViewModel by viewModelsProvider { plainViewModelFactory }
-
-  private val plainViewModel1: MainPlainViewModel by viewModels {
-    viewModelFactory {
-      initializer {
-        plainViewModelFactory.get()
-      }
-    }
-  }
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)

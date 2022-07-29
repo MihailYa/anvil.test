@@ -12,7 +12,7 @@ interface HomeComponent {
 
   companion object {
     fun create(): HomeComponent {
-      TODO()
+      return DaggerHomeComponent.create()
     }
   }
 }
