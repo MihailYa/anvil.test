@@ -19,7 +19,7 @@ import kotlinx.coroutines.flow.onEach
 import javax.inject.Inject
 import javax.inject.Provider
 
-class HomeFragment : Fragment(), WithViewModel<HomeViewModel> by WithViewModelImpl() {
+class HomeFragment : Fragment() {
 
   private val binding by viewBinding(FragmentHomeBinding::bind)
 
