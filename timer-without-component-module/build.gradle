@@ -1,0 +1,18 @@
+plugins {
+  id 'java-library'
+  id 'org.jetbrains.kotlin.jvm'
+  id 'com.squareup.anvil'
+}
+
+java {
+  sourceCompatibility = JavaVersion.VERSION_1_8
+  targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+anvil {
+  generateDaggerFactories = true // default is false
+}
+
+dependencies {
+  implementation deps.dagger2.dagger
+}
