@@ -2,7 +2,7 @@ plugins {
   id("com.android.application")
   id("org.jetbrains.kotlin.android")
   id("com.squareup.anvil")
-  id("kotlin-kapt")
+  // id("kotlin-kapt")
   id("androidx.navigation.safeargs")
 }
 
@@ -39,8 +39,6 @@ android {
 }
 
 dependencies {
-  implementation(project(":timer-without-component-module"))
-  implementation(project(":locale-with-component-module"))
 
   implementation("androidx.appcompat:appcompat:1.4.2")
   implementation("com.google.android.material:material:1.6.1")
@@ -59,8 +57,12 @@ dependencies {
   implementation(libs.timber)
 
   implementation(libs.dagger2.dagger)
-  kapt(libs.dagger2.compiler)
+  // kapt(libs.dagger2.compiler)
 
   implementation(libs.nav.fragment)
   implementation(libs.nav.ui)
+}
+
+anvil {
+  generateDaggerFactories.set(true)
 }
