@@ -2,7 +2,7 @@ plugins {
   id("com.android.application")
   id("org.jetbrains.kotlin.android")
   id("com.squareup.anvil")
-  // id("kotlin-kapt")
+  id("kotlin-kapt")
   id("androidx.navigation.safeargs")
 }
 
@@ -57,12 +57,12 @@ dependencies {
   implementation(libs.timber)
 
   implementation(libs.dagger2.dagger)
-  // kapt(libs.dagger2.compiler)
+  kapt(libs.dagger2.compiler)
 
   implementation(libs.nav.fragment)
   implementation(libs.nav.ui)
 }
 
-anvil {
-  generateDaggerFactories.set(true)
-}
+// anvil {
+//   generateDaggerFactories.set(true)
+//}
